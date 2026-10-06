@@ -1,0 +1,62 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 40,
+    "spacing": 4,
+    
+    // Disposizione dei moduli
+    "modules-left": ["custom/power", "sway/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["pulseaudio/slider", "custom/media"],
+
+    // Modulo: Lista Desktop
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        }
+    },
+
+    // Modulo: Orologio al centro
+    "clock": {
+        "format": "{:%H:%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+
+    // Modulo: Slider del Volume
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal"
+    },
+
+    // Modulo: Pulsante Play/Pause
+    "custom/media": {
+        "format": "{icon}",
+        "return-type": "json",
+        "format-icons": {
+            "Playing": "", // Icona Pausa quando in riproduzione
+            "Paused": "",  // Icona Play quando in pausa
+            "Stopped": ""
+        },
+        // Script per leggere lo stato (richiede playerctl)
+        "exec": "playerctl -a metadata --format '{\"text\": \"{{status}}\", \"tooltip\": \"{{artist}} - {{title}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+        // Azione al click
+        "on-click": "playerctl play-pause"
+    },
+
+    // Modulo: Pulsante Spegnimento
+    "custom/power": {
+        "format": "",
+        "on-click": "poweroff",
+        "tooltip": false
+    }
+}

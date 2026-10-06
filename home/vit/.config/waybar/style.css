@@ -1,0 +1,100 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrains Mono", "FontAwesome", sans-serif;
+    font-weight: bold; /* Sui monospaziati il grassetto aiuta molto la leggibilità in auto */    
+    font-size: 16px;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: rgba(43, 48, 59, 0.5);
+    color: #ffffff;
+}
+
+#workspaces button {
+    padding: 0 10px;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+#workspaces button:hover {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#workspaces button.focused {
+    background-color: #64727D;
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+#clock {
+    padding: 0 15px;
+    font-weight: bold;
+    font-size: 20px; /* Più grande per leggerlo subito */
+}
+
+/* ==============================================
+   SLIDER VOLUME - ULTRA SLIM (Hairline)
+   ============================================== */
+#pulseaudio-slider {
+    min-width: 300px;      /* Un filo più corto per un look più discreto */
+    margin: 0 15px;
+    padding: 20px 0;       /* Hitbox ancora più alta per compensare lo slider piccolo */
+}
+
+/* Il cursore (Thumb) - Piccolo ed elegante */
+#pulseaudio-slider slider {
+    min-height: 16px;      /* Ridotto da 28 a 16 */
+    min-width: 16px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5); /* Ombra leggera per non farlo sparire */
+}
+
+/* La pista di sfondo - Spessore minimo assoluto */
+#pulseaudio-slider trough {
+    min-height: 2px;       /* Spessa letteralmente 2 pixel */
+    border-radius: 1px;
+    background-color: rgba(255, 255, 255, 0.15); 
+}
+
+/* La parte riempita - 2 pixel */
+#pulseaudio-slider highlight {
+    background-color: #ffffff; 
+    border-radius: 1px;
+}
+
+/* ==============================================
+   PULSANTE PLAY/PAUSE (Senza Contenitore)
+   ============================================== */
+#custom-media {
+    padding: 0 20px;       /* Spazio laterale invisibile per fare la hitbox */
+    margin: 0;
+    background-color: transparent; /* NESSUN CONTENITORE: l'icona "galleggia" */
+    color: #ffffff;        /* Icona bianca pura */
+    font-size: 26px;       /* Molto grande e leggibile */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Piccola ombra per staccarla dallo sfondo */
+    transition: opacity 0.2s; /* Animazione fluida */
+}
+
+/* Effetto di tocco: l'icona si scurisce leggermente al posto del riquadro */
+#custom-media:active {
+    opacity: 0.5;
+}
+
+/* ==============================================
+   PULSANTE SPEGNIMENTO
+   ============================================== */
+#custom-power {
+    padding: 0 20px;
+    margin: 0;
+    background-color: transparent;
+    color: #ffffff;        /* Colore bianco */
+    font-size: 26px;       /* Stessa dimensione del play/pause */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    transition: opacity 0.2s;
+}
+
+#custom-power:active {
+    opacity: 0.5;
+}

@@ -1,0 +1,1 @@
+console=serial0,115200 console=tty1 root=PARTUUID=3d403ca7-02 rootfstype=ext4 fsck.repair=yes rootwait ds=nocloud;i=rpi-imager-1790097835605 cfg80211.ieee80211_regdom=IT quiet logo.nologo vt.global_cursor_default=0 disable_splash=1 boot_delay=0 dtoverlay=disable-bt 
